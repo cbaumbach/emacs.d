@@ -1,3 +1,18 @@
+;;; PACKAGES
+
+(require 'package)
+(setq package-selected-packages
+      '())
+
+(require 'cl-lib)
+(unless (cl-every 'package-installed-p package-selected-packages)
+  (package-refresh-contents)
+  (package-install-selected-packages))
+
+(when (< emacs-major-version 27)
+  (package-initialize))
+
+
 ;;; CUSTOM FILE
 
 (setq custom-file (concat user-emacs-directory "custom.el"))
