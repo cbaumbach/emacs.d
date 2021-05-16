@@ -4,7 +4,8 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
 (setq package-selected-packages
-      '(avy))
+      '(avy
+        dracula-theme))
 
 (require 'cl-lib)
 (unless (cl-every 'package-installed-p package-selected-packages)
@@ -22,9 +23,14 @@
   (load custom-file))
 
 
-;;; MISCELLANEOUS
+;;; APPEARANCE
+
+(load-theme 'dracula)
 
 (menu-bar-mode 0)
+
+
+;;; MISCELLANEOUS
 
 (setq ring-bell-function 'ignore)
 
