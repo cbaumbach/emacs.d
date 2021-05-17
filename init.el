@@ -3,6 +3,9 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
+(when (< emacs-major-version 27)
+  (package-initialize))
+
 (setq package-selected-packages
       '(avy
         dracula-theme))
