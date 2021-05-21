@@ -38,6 +38,8 @@
 
 ;;; MISCELLANEOUS
 
+(set-language-environment "UTF-8")
+
 (setq ring-bell-function 'ignore)
 
 (setq make-backup-files nil)
