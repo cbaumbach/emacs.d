@@ -53,6 +53,8 @@
 
 (setq read-buffer-completion-ignore-case t)
 
+(setq scroll-conservatively 999)
+
 
 ;;; AVY
 
