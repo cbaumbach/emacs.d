@@ -94,3 +94,6 @@
           (ess-indent-from-chain-start)
           (ess-indent-with-fancy-comments)))
   (ess-add-style 'OWN ess-own-style-list))
+
+;; Use single hash character for all comments.
+(add-hook 'ess-mode-hook (lambda () (setq comment-add 0)))
