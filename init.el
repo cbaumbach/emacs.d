@@ -73,3 +73,24 @@
   "Jump to the currently visible CHAR." t)
 
 (global-set-key (kbd "C-c C-SPC") 'avy-goto-char)
+
+
+;;; ESS
+
+(setq ess-style 'OWN)
+
+(with-eval-after-load "ess"
+  (setq ess-own-style-list
+        '((ess-indent-offset . 4)
+          (ess-offset-arguments . prev-line)
+          (ess-offset-arguments-newline . prev-line)
+          (ess-offset-block . prev-line)
+          (ess-offset-continued . straight)
+          (ess-align-nested-calls "ifelse")
+          (ess-align-arguments-in-calls)
+          (ess-align-continuations-in-calls)
+          (ess-align-blocks)
+          (ess-indent-from-lhs)
+          (ess-indent-from-chain-start)
+          (ess-indent-with-fancy-comments)))
+  (ess-add-style 'OWN ess-own-style-list))
