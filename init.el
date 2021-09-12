@@ -8,7 +8,8 @@
 
 (setq package-selected-packages
       '(avy
-        dracula-theme))
+        dracula-theme
+        ess))
 
 (require 'cl-lib)
 (unless (cl-every 'package-installed-p package-selected-packages)
