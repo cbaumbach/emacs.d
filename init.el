@@ -44,6 +44,10 @@
         (add-to-list 'default-frame-alist `(font . ,font))
         (throw 'done t)))))
 
+(mapc #'(lambda (face)                  ; disable bold font
+          (set-face-attribute face nil :weight 'normal))
+      (face-list))
+
 
 ;;; MISCELLANEOUS
 
