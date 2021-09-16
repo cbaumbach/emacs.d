@@ -36,6 +36,14 @@
 (when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (when (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 
+(let ((font-family-list (font-family-list)))
+  (catch 'done
+    (dolist (font '("UnifontMono" "Consolas"))
+      (when (member font font-family-list)
+        (add-to-list 'initial-frame-alist `(font . ,font))
+        (add-to-list 'default-frame-alist `(font . ,font))
+        (throw 'done t)))))
+
 
 ;;; MISCELLANEOUS
 
