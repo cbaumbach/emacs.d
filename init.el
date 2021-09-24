@@ -114,3 +114,8 @@
 
 ;; Use single hash character for all comments.
 (add-hook 'ess-mode-hook (lambda () (setq comment-add 0)))
+
+
+;;; Org
+
+(setq-default org-adapt-indentation nil)
