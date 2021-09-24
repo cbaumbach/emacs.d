@@ -87,6 +87,11 @@
 (global-set-key (kbd "C-c C-SPC") 'avy-goto-char)
 
 
+;;; Dired
+
+(add-hook 'dired-mode-hook 'dired-hide-details-mode)
+
+
 ;;; ESS
 
 (setq ess-style 'OWN)
