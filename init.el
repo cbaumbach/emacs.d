@@ -116,6 +116,27 @@
 (add-hook 'ess-mode-hook (lambda () (setq comment-add 0)))
 
 
+;;; Notes
+
+(defvar cb/notes-filename nil
+  "Path to file where notes should be saved.")
+
+(setq cb/notes-filename "~/notes.org")
+
+(defun cb/toggle-notes ()
+  (interactive)
+  (if (string-equal (buffer-file-name) (expand-file-name cb/notes-filename))
+      (quit-window)
+    (find-file cb/notes-filename)))
+
+
 ;;; Org
 
 (setq-default org-adapt-indentation nil)
+
+
+;;; Keybindings
+
+;; Toggles
+(global-unset-key (kbd "C-h t"))
+(global-set-key (kbd "C-h t n") 'cb/toggle-notes)
