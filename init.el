@@ -133,6 +133,7 @@
 ;;; Org
 
 (setq-default org-adapt-indentation nil)
+(setq org-startup-folded t)
 
 
 ;;; Keybindings
