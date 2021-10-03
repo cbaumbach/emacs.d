@@ -1,4 +1,4 @@
-;;; PACKAGES
+;;; ==== PACKAGES ====================================================
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
@@ -20,14 +20,14 @@
   (package-initialize))
 
 
-;;; CUSTOM FILE
+;;; ==== CUSTOM FILE =================================================
 
 (setq custom-file (concat user-emacs-directory "custom.el"))
 (when (file-exists-p custom-file)
   (load custom-file))
 
 
-;;; APPEARANCE
+;;; ==== APPEARANCE ==================================================
 
 (load-theme 'dracula)
 
@@ -49,7 +49,7 @@
       (face-list))
 
 
-;;; MISCELLANEOUS
+;;; ==== MISCELLANEOUS ===============================================
 
 (set-language-environment "UTF-8")
 
@@ -76,7 +76,7 @@
         split-width-threshold (1- (window-total-width))))
 
 
-;;; AVY
+;;; ==== AVY =========================================================
 
 (with-eval-after-load "avy"
   (setq avy-style 'at)
@@ -94,12 +94,12 @@
 (global-set-key (kbd "C-c C-SPC") 'avy-goto-char)
 
 
-;;; Dired
+;;; ==== Dired =======================================================
 
 (add-hook 'dired-mode-hook 'dired-hide-details-mode)
 
 
-;;; ESS
+;;; ==== ESS =========================================================
 
 (setq ess-style 'OWN)
 
@@ -123,7 +123,7 @@
 (add-hook 'ess-mode-hook (lambda () (setq comment-add 0)))
 
 
-;;; Notes
+;;; ==== Notes =======================================================
 
 (defvar cb/notes-filename nil
   "Path to file where notes should be saved.")
@@ -137,13 +137,13 @@
     (find-file cb/notes-filename)))
 
 
-;;; Org
+;;; ==== Org =========================================================
 
 (setq-default org-adapt-indentation nil)
 (setq org-startup-folded t)
 
 
-;;; Keybindings
+;;; ==== Keybindings =================================================
 
 ;; Toggles
 (global-unset-key (kbd "C-h t"))
