@@ -9,7 +9,10 @@
 (setq package-selected-packages
       '(avy
         dracula-theme
-        ess))
+        ess
+        poly-markdown
+        poly-R
+        polymode))
 
 (require 'cl-lib)
 (unless (cl-every 'package-installed-p package-selected-packages)
