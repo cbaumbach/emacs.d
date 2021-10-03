@@ -68,6 +68,13 @@
 
 (setq scroll-conservatively 999)
 
+;; Prefer side-by-side over stacked for first split provided that
+;; split windows would be more than `fill-column` characters wide.
+(setq-default fill-column 70)
+(when (> (/ (window-total-width) 2) fill-column)
+  (setq split-height-threshold (+ (window-total-height) 2)
+        split-width-threshold (1- (window-total-width))))
+
 
 ;;; AVY
 
