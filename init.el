@@ -22,6 +22,8 @@
 (when (< emacs-major-version 27)
   (package-initialize))
 
+(load (concat user-emacs-directory "defuns.el"))
+
 
 ;;; ==== CUSTOM FILE =================================================
 
@@ -151,3 +153,7 @@
 ;; Toggles
 (global-unset-key (kbd "C-h t"))
 (global-set-key (kbd "C-h t n") 'cb/toggle-notes)
+
+;; Movement
+(global-set-key (kbd "C-a") 'cb/move-beginning-of-line-or-buffer)
+(global-set-key (kbd "C-e") 'cb/move-end-of-line-or-buffer)
