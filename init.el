@@ -41,6 +41,17 @@
 (when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (when (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 
+(defun cb/use-terminal-like-font-attributes ()
+  "Disable bold font, use one font family and a single height."
+  (let ((family (face-attribute 'default :family))
+        (height (face-attribute 'default :height)))
+    (mapc (lambda (face)
+            (set-face-attribute face nil
+                                :weight 'normal
+                                :family family
+                                :height height))
+          (face-list))))
+
 (when (display-graphic-p)
   (let ((font-family-list (font-family-list)))
     (catch 'done
@@ -51,11 +62,12 @@
                               :height 120)
           (add-to-list 'initial-frame-alist `(font . ,font))
           (add-to-list 'default-frame-alist `(font . ,font))
-          (throw 'done t))))))
-
-(mapc #'(lambda (face)                  ; disable bold font
-          (set-face-attribute face nil :weight 'normal))
-      (face-list))
+          (throw 'done t)))))
+  (cb/use-terminal-like-font-attributes)
+  (add-hook 'minibuffer-setup-hook
+            'cb/use-terminal-like-font-attributes)
+  (add-hook 'change-major-mode-after-body-hook
+            'cb/use-terminal-like-font-attributes))
 
 
 ;;; ==== MISCELLANEOUS ===============================================
