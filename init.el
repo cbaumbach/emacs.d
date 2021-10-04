@@ -77,8 +77,8 @@
 ;; split windows would be more than `fill-column` characters wide.
 (setq-default fill-column 70)
 (when (> (/ (window-total-width) 2) fill-column)
-  (setq split-height-threshold (+ (window-total-height) 2)
-        split-width-threshold (1- (window-total-width))))
+  (setq split-height-threshold (+ (window-total-height) 3) ; values < 3 failed
+        split-width-threshold (- (window-total-width) 3))) ;  in gui emacs
 
 
 ;;; ==== AVY =========================================================
