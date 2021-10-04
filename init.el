@@ -41,13 +41,17 @@
 (when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (when (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 
-(let ((font-family-list (font-family-list)))
-  (catch 'done
-    (dolist (font '("UnifontMono" "Consolas"))
-      (when (member font font-family-list)
-        (add-to-list 'initial-frame-alist `(font . ,font))
-        (add-to-list 'default-frame-alist `(font . ,font))
-        (throw 'done t)))))
+(when (display-graphic-p)
+  (let ((font-family-list (font-family-list)))
+    (catch 'done
+      (dolist (font '("UnifontMono" "Consolas"))
+        (when (member font font-family-list)
+          (set-face-attribute 'default nil
+                              :family font
+                              :height 120)
+          (add-to-list 'initial-frame-alist `(font . ,font))
+          (add-to-list 'default-frame-alist `(font . ,font))
+          (throw 'done t))))))
 
 (mapc #'(lambda (face)                  ; disable bold font
           (set-face-attribute face nil :weight 'normal))
