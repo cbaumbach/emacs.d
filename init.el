@@ -148,6 +148,12 @@
 (setq org-startup-folded t)
 
 
+;;; ==== Python ======================================================
+
+;; Don't use python-specific definition of sexps.
+(add-hook 'python-mode-hook (lambda () (setq forward-sexp-function nil)))
+
+
 ;;; ==== Keybindings =================================================
 
 ;; Toggles
