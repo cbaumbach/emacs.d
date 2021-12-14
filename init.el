@@ -91,6 +91,8 @@
 
 (setq scroll-conservatively 999)
 
+(setq set-mark-command-repeat-pop t)
+
 ;; Prefer side-by-side over stacked for first split provided that
 ;; split windows would be more than `fill-column` characters wide.
 (setq-default fill-column 70)
