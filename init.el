@@ -81,6 +81,8 @@
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
 
+(delete-selection-mode)
+
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (column-number-mode)
