@@ -124,6 +124,12 @@
 (add-hook 'dired-mode-hook 'dired-hide-details-mode)
 
 
+;;; ==== Ediff =======================================================
+
+(with-eval-after-load "ediff"
+  (setq ediff-window-setup-function 'ediff-setup-windows-plain))
+
+
 ;;; ==== ESS =========================================================
 
 (setq ess-style 'OWN)
