@@ -212,6 +212,7 @@
 ;; Toggles
 (global-unset-key (kbd "C-h t"))
 (global-set-key (kbd "C-h t n") 'cb/toggle-notes)
+(global-set-key (kbd "C-h t t") 'toggle-truncate-lines)
 
 ;; Inserts
 (global-unset-key (kbd "C-h i"))
