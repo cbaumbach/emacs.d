@@ -213,6 +213,10 @@
 (global-unset-key (kbd "C-h t"))
 (global-set-key (kbd "C-h t n") 'cb/toggle-notes)
 
+;; Inserts
+(global-unset-key (kbd "C-h i"))
+(global-set-key (kbd "C-h i p") 'cb/insert-path)
+
 ;; Movement
 (global-set-key (kbd "C-a") 'cb/move-beginning-of-line-or-buffer)
 (global-set-key (kbd "C-e") 'cb/move-end-of-line-or-buffer)
