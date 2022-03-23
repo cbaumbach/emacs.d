@@ -188,6 +188,12 @@
   (deactivate-mark)
   (goto-char end))
 
+(defun cb/python-shell-send-file (filename)
+  (interactive
+   (list (read-file-name "File to send: " nil nil t
+                         (file-name-nondirectory (buffer-file-name)))))
+  (python-shell-send-file filename))
+
 (add-hook 'python-mode-hook
           (lambda ()
             (local-set-key (kbd "M-p") 'python-nav-backward-statement)
@@ -197,6 +203,7 @@
             (local-set-key (kbd "C-c C-n") 'cb/python-shell-send-statement-and-step)
             (local-set-key (kbd "C-c C-c") 'cb/python-shell-send-statement-and-step)
             (local-set-key (kbd "C-c C-r") 'cb/python-shell-send-region)
+            (local-set-key (kbd "C-c C-l") 'cb/python-shell-send-file)
             (local-set-key (kbd "C-z") 'python-shell-switch-to-shell)
             ;; Don't use python-specific definition of sexps.
             (setq forward-sexp-function nil)))
