@@ -173,6 +173,9 @@
 (setq-default org-adapt-indentation nil)
 (setq org-edit-src-content-indentation 0)
 (setq org-startup-folded t)
+(add-hook 'org-mode-hook
+          (lambda ()
+            (local-set-key (kbd "C-c ,") 'org-insert-structure-template)))
 
 
 ;;; ==== Python ======================================================
