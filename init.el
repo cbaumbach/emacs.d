@@ -185,6 +185,12 @@
   (python-shell-send-statement)
   (python-nav-forward-statement))
 
+(defun cb/python-shell-send-block-and-step ()
+  (interactive)
+  (mark-paragraph)
+  (cb/python-shell-send-region (region-beginning) (region-end) nil t)
+  (python-nav-forward-statement))
+
 (defun cb/python-shell-send-region (start end &optional send-main msg)
   (interactive
    (list (region-beginning) (region-end) current-prefix-arg t))
@@ -205,7 +211,7 @@
             (local-set-key (kbd "M-a") 'python-nav-backward-defun)
             (local-set-key (kbd "M-e") 'python-nav-forward-defun)
             (local-set-key (kbd "C-c C-n") 'cb/python-shell-send-statement-and-step)
-            (local-set-key (kbd "C-c C-c") 'cb/python-shell-send-statement-and-step)
+            (local-set-key (kbd "C-c C-c") 'cb/python-shell-send-block-and-step)
             (local-set-key (kbd "C-c C-r") 'cb/python-shell-send-region)
             (local-set-key (kbd "C-c C-l") 'cb/python-shell-send-file)
             (local-set-key (kbd "C-z") 'python-shell-switch-to-shell)
