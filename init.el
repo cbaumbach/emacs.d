@@ -171,6 +171,7 @@
 ;;; ==== Org =========================================================
 
 (setq-default org-adapt-indentation nil)
+(setq org-edit-src-content-indentation 0)
 (setq org-startup-folded t)
 
 
