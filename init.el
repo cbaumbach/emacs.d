@@ -156,10 +156,8 @@
 
 ;;; ==== Notes =======================================================
 
-(defvar cb/notes-filename nil
+(defvar cb/notes-filename "~/notes.org"
   "Path to file where notes should be saved.")
-
-(setq cb/notes-filename "~/notes.org")
 
 (defun cb/toggle-notes ()
   (interactive)
