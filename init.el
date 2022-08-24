@@ -99,6 +99,9 @@
 
 (setq-default default-input-method 'german-postfix)
 
+;; Enable all commands that are disabled by default.
+(setq disabled-command-function nil)
+
 
 ;;; ==== AVY =========================================================
 
