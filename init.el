@@ -186,6 +186,13 @@
           (lambda ()
             (local-set-key (kbd "C-c ,") 'org-insert-structure-template)))
 
+(add-hook 'org-mode-hook
+          (lambda ()
+            (local-set-key (kbd "M-n h") 'org-metaleft)
+            (local-set-key (kbd "M-n l") 'org-metaright)
+            (local-set-key (kbd "M-n j") 'org-metadown)
+            (local-set-key (kbd "M-n k") 'org-metaup)))
+
 
 ;;; ==== Python ======================================================
 
