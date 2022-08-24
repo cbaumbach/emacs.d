@@ -125,6 +125,15 @@
 
 (add-hook 'dired-mode-hook 'dired-hide-details-mode)
 
+(autoload 'dired-jump "dired-x"
+  "Jump to Dired buffer corresponding to current buffer." t)
+
+(autoload 'dired-jump-other-window "dired-x"
+  "Like \\[dired-jump] (dired-jump) but in other window." t)
+
+(global-set-key (kbd "C-x C-j") 'dired-jump)
+(global-set-key (kbd "C-x 4 C-j") 'dired-jump-other-window)
+
 
 ;;; ==== Ediff =======================================================
 
