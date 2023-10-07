@@ -223,6 +223,7 @@
 
 ;; Toggles
 (global-unset-key (kbd "C-h t"))
+(global-set-key (kbd "C-h t a") 'auto-fill-mode)
 (global-set-key (kbd "C-h t n") 'cb/toggle-notes)
 (global-set-key (kbd "C-h t t") 'toggle-truncate-lines)
 
