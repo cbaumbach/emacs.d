@@ -97,6 +97,8 @@
   (setq split-height-threshold (+ (window-total-height) 3) ; values < 3 failed
         split-width-threshold (- (window-total-width) 3))) ;  in gui emacs
 
+(setq-default default-input-method 'german-postfix)
+
 
 ;;; ==== AVY =========================================================
 
