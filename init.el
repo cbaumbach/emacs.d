@@ -255,6 +255,7 @@
 ;; Movement
 (global-set-key (kbd "C-a") 'cb/move-beginning-of-line-or-buffer)
 (global-set-key (kbd "C-e") 'cb/move-end-of-line-or-buffer)
+(global-set-key (kbd "M-o") 'other-window)
 
 ;; Editing
 (global-set-key (kbd "M-z") 'zap-up-to-char)
