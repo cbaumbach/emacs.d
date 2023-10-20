@@ -90,12 +90,12 @@
 
 (setq set-mark-command-repeat-pop t)
 
-;; Prefer side-by-side over stacked for first split provided that
-;; split windows would be more than `fill-column` characters wide.
 (setq-default fill-column 70)
-(when (> (/ (window-total-width) 2) fill-column)
-  (setq split-height-threshold (+ (window-total-height) 3) ; values < 3 failed
-        split-width-threshold (- (window-total-width) 3))) ;  in gui emacs
+
+;; Prefer side-by-side splits if each of the resulting windows can be
+;; at least fill-column columns wide.
+(setq split-height-threshold nil
+      split-width-threshold (1+ (* 2 fill-column)))
 
 (setq-default default-input-method 'german-postfix)
 
